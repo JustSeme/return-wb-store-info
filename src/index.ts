@@ -7,8 +7,11 @@ const port = 3000;
 
 
 app.get('/', async (request, response) => {
+    const currency = 'rub'
+    const productsIds = '138593051;94340317;94340606;138590435;138607462;94339119;94339244;'
+    const storeId = '-1681991'
 
-    const wbResponse = await fetch('https://card.wb.ru/cards/detail?appType=1&curr=rub&nm=138593051;94340317;94340606;138590435;138607462;94339119;94339244;&dest=-1681991')
+    const wbResponse = await fetch(`https://card.wb.ru/cards/detail?curr=${currency}&nm=${productsIds}&dest=${storeId}`)
         .then(res => res.json())
 
     // Сложность алгоритма - O(n)^2, иначе по-моему никак

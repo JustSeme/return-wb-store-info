@@ -76,13 +76,17 @@ var fetch = function () {
 var app = (0, express_1.default)();
 var port = 3000;
 app.get('/', function (request, response) { return __awaiter(void 0, void 0, void 0, function () {
-    var wbResponse, mappedProducts;
+    var currency, productsIds, storeId, wbResponse, mappedProducts;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, fetch('https://card.wb.ru/cards/detail?appType=1&curr=rub&nm=138593051;94340317;94340606;138590435;138607462;94339119;94339244;&dest=-1681991')
-                    .then(function (res) { return res.json(); })
-                // Сложность алгоритма - O(n)^2, иначе по-моему никак
-            ];
+            case 0:
+                currency = 'rub';
+                productsIds = '138593051;94340317;94340606;138590435;138607462;94339119;94339244;';
+                storeId = '-1681991';
+                return [4 /*yield*/, fetch("https://card.wb.ru/cards/detail?curr=".concat(currency, "&nm=").concat(productsIds, "&dest=").concat(storeId))
+                        .then(function (res) { return res.json(); })
+                    // Сложность алгоритма - O(n)^2, иначе по-моему никак
+                ];
             case 1:
                 wbResponse = _a.sent();
                 mappedProducts = wbResponse.data.products.map(function (product) {
