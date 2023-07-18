@@ -5,9 +5,7 @@ const app = express();
 const port = 3000;
 
 
-
-// Изначально хотел сделать лямбда-функцией, чтобы сервер за зря не крутился, но посмотрев на ваш стек, решил лучше на express
-app.get('/', async (request, response) => {
+app.get('/api', async (request, response) => {
     const currency = 'rub'
     const productsIds = '138593051;94340317;94340606;138590435;138607462;94339119;94339244;'
     const storeId = '-1681991'

@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
       "esModuleInterop": true,
-      "outDir": "dist",
+      "outDir": "dist/api",
       "baseUrl": "."
     }
 }

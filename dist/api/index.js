@@ -75,7 +75,7 @@ var fetch = function () {
 };
 var app = (0, express_1.default)();
 var port = 3000;
-app.get('/', function (request, response) { return __awaiter(void 0, void 0, void 0, function () {
+app.get('/api', function (request, response) { return __awaiter(void 0, void 0, void 0, function () {
     var currency, productsIds, storeId, wbResponse, mappedProducts;
     return __generator(this, function (_a) {
         switch (_a.label) {

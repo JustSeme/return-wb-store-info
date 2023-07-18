@@ -6,8 +6,8 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "start": "node .",
-    "dev": "nodemon ."
+    "start": "node ./dist/api",
+    "dev": "nodemon ./dist/api"
   },
   "dependencies": {
     "@types/express": "^4.17.17",
